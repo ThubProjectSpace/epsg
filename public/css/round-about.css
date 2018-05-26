@@ -1,0 +1,27 @@
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+.navbar .container-fluid {
+    padding: 6px;
+}
+.img-center {
+	margin: 0 auto;
+}
+
+.navbar-header a {
+    color:ghostwhite;
+    list-style: none;
+}
+
+.navbar-header .btn:hover {
+    background-color: orange;
+}
+
+.navbar-header .btn {
+    background-color:gray;
+}
+
+footer {
+    margin: 50px 0;
+}

@@ -1,0 +1,58 @@
+var userListData = [];
+$(document).ready(function() {
+      populateTable();
+
+});
+
+function populateTable() {
+
+    
+    var tableContent = '';
+
+    // jQuery AJAX call for JSON
+    $.getJSON( '/pay/userlist', function( data ) {
+
+        // For each item in our JSON, add a table row and cells to the content string
+        $.each(data, function(){
+            tableContent += '<tr>';
+            tableContent += '<td>' + this.empid + </td>';
+            tableContent += '<td>' + this.employeename + '</td>';
+            tableContent += '</tr>'; 
+            tableContent += '<tr>';
+            tableContent += '<td>' + this.workingat + '</td>';
+	    tableContent += '<td>' + this.accountnumber + </td>';
+            tableContent += '</tr>';
+            tableContent += '<tr>';
+            tableContent += '<td>' + this.advance + '</td>';
+	    tableContent += '<td>' + this.netsalary + </td>';
+            tableContent += '</tr>';
+	    tableContent += '<tr>';
+            tableContent += '<td>' + this.basic + '</td>';
+	    tableContent += '<td>' + this.da + </td>';
+            tableContent += '</tr>';
+            tableContent += '<tr>';
+            tableContent += '<td>' + this.hra + '</td>';
+	    tableContent += '<td>' + this.cls + </td>';
+            tableContent += '</tr>';
+	    tableContent += '<tr>';
+            tableContent += '<td>' + this.amountdeductedfor + '</td>';
+	    tableContent += '<td>' + this.pt + </td>';
+            tableContent += '</tr>';
+            tableContent += '<tr>';
+            tableContent += '<td>' + this.epf + '</td>';
+	    tableContent += '<td>' + this.tds + </td>';
+            tableContent += '</tr>';
+            tableContent += '<tr>';
+            tableContent += '<td>' + this.gi + '</td>';
+	    tableContent += '<td>' + this.canteen + </td>';
+            tableContent += '</tr>';
+            tableContent += '<tr>';
+            tableContent += '<td>' + this.totaldeduction + '</td>';
+	    tableContent += '<td>' + this.gross + </td>';
+            tableContent += '</tr>';
+        });
+
+        // Inject the whole content string into our existing HTML table
+        $('#userList table tbody').html(tableContent);
+    });
+};
